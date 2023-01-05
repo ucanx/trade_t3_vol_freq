@@ -146,11 +146,11 @@ if __name__ == '__main__':
 
         total_volume = 0
         for kline in klines:
-            print(f"output: {kline}")
+            # print(f"output: {kline}")
             total_volume = total_volume + int(float(kline[5]))
         avg_volume = total_volume / 1000
         # avg_volume = int(avg_volume)
-        print(f'>>>avg_volume: {avg_volume}')
+        print(f'>>> avg_volume: {avg_volume}')
 
         last_ten_list = klines[-10:]
         last_ten_volume = 0
@@ -158,14 +158,14 @@ if __name__ == '__main__':
             last_ten_volume = last_ten_volume + int(float(last[5]))
         last_ten_avg = last_ten_volume / 10
         # last_ten_avg = int(last_ten_avg)
-        print(f'>>>last_ten_avg: {last_ten_avg}')
+        print(f'>>> last_ten_avg: {last_ten_avg}')
 
         volume_alert = False
         if last_ten_avg > avg_volume:
-            print('***Volume Alert***')
+            print(f'***Volume Alert for {pair}***')
             volume_alert = True
         else:
-            print('***Volume Normal***')
+            print(f'***Volume Normal for {pair}***')
             volume_alert = False
             continue
 
