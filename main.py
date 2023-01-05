@@ -86,7 +86,7 @@ def generateTillsonT3(close_array, high_array, low_array, volume_factor, t3Lengt
 if __name__ == '__main__':
     filename = 'credentials.txt'
     connection = BinanceConnection(filename)
-    interval = '1d'
+    interval = '15m'
     pair_one = ['BTCUSDT']
     pair_list = ['BTCUSDT',
                  'ETHUSDT',
