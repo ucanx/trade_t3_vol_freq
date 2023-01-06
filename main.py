@@ -237,3 +237,7 @@ if __name__ == '__main__':
         b = f'{a}/USDT'
         config_list.append(b)
     print(f'>>> parameters for config.json: {config_list}')
+
+    with open("config.json", "r") as p:
+        data = json.load(p)
+        print(data)
