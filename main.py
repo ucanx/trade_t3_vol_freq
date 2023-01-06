@@ -1,3 +1,4 @@
+import json
 import datetime
 from datetime import datetime
 
@@ -225,3 +226,14 @@ if __name__ == '__main__':
     # bot.updater.start_polling()
     # print("Telegram Bot started, press CTRL+C to stop...")
     # bot.updater.idle()
+
+    config_list = []
+    for buy in bot.buy_list:
+        x = buy.split("USDT")[0]
+        y = f'{x}/USDT'
+        config_list.append(y)
+    for sell in bot.sell_list:
+        a = sell.split("USDT")[0]
+        b = f'{a}/USDT'
+        config_list.append(b)
+    print(f'>>> parameters for config.json: {config_list}')
