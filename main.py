@@ -238,6 +238,11 @@ if __name__ == '__main__':
         config_list.append(b)
     print(f'>>> parameters for config.json: {config_list}')
 
-    with open("config.json", "r") as p:
-        data = json.load(p)
-        print(data)
+    c_file = open("config.json", "r")
+    data = json.load(c_file)
+    c_file.close()
+    print(data)
+    data["exchange"]["pair_whitelist"] = config_list
+    c_file = open("config.json", "w")
+    json.dump(data, c_file)
+    c_file.close()
